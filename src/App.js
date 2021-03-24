@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Header from './header/Header'
+import Main from './home/Main'
+import SearchPage from './search/SearchPage'
+import MyList from './myList/MyList'
+import {useSelector} from 'react-redux';
+import {selectSearch} from './store/SearchSlice'
+import FilmCard from './FilmCard/FilmCard'
+
 
 function App() {
+
+  const store = useSelector(selectSearch)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+          <Header/> 
+          <Switch>
+              {store.isSearching&&<Route exact path='/' component={SearchPage}></Route>}
+              {!store.isSearching&&<Route exact path='/' component={Main}></Route>}
+              <Route path='/mylist' component={MyList}></Route>
+              <Route path="/film/:id" children={<FilmCard/>} />
+          </Switch>
+      </Router>
     </div>
   );
 }
