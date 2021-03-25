@@ -25,7 +25,7 @@ const SearchPage = (props) => {
 
 
     useEffect(()=>{     
-        fetch(`http://api.themoviedb.org/3/search/movie?page=${store.currentPage}${store.searchField}&api_key=48ea53c4545508f2da69cb2f3c339279`)
+        fetch(`https://api.themoviedb.org/3/search/movie?page=${store.currentPage}${store.searchField}&api_key=48ea53c4545508f2da69cb2f3c339279`)
         .then(response=>response.json())
         .then(response=>{
             dispatch(setAllPages(response.total_pages))

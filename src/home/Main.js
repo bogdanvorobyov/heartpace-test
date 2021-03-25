@@ -57,7 +57,7 @@ const Main = (props) => {
     
 
     useEffect(()=>{     
-            fetch(`http://api.themoviedb.org/3/discover/movie?page=${store.currentPage}${store.sortering}${store.genres}${store.years}&api_key=48ea53c4545508f2da69cb2f3c339279`)
+            fetch(`https://api.themoviedb.org/3/discover/movie?page=${store.currentPage}${store.sortering}${store.genres}${store.years}&api_key=48ea53c4545508f2da69cb2f3c339279`)
             .then(response=>response.json())
             .then(response=>{
                 dispatch(setAllPages(response.total_pages))
