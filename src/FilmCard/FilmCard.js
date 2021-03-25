@@ -106,7 +106,6 @@ const FilmCard = () => {
                                     <Box className={classes.infoPar}>
                                         <Box>
                                             <img src={store.film.poster_path?`https://image.tmdb.org/t/p/w300/${store.film.poster_path}`:"https://www.diabetes.ie/wp-content/uploads/2017/02/no-image-available.png"} alt=""/>
-
                                         </Box>
                                         <Box className={classes.info}>
                                             <CircularProgress  fontSize="large" color="secondary" className={classes.circleProgress} variant="determinate" value={Number.parseInt(store.film.vote_average)*10} />
@@ -118,13 +117,9 @@ const FilmCard = () => {
                                                 <AddToFav film={store.film} data="cardIcon"/>
                                                 <Typography variant="h3">Description:</Typography>
                                                 <Typography variant="h4">{store.film.overview}</Typography>
-
                                             </Box> 
-
-                                        </Box>
-                                        
-                                    </Box>
-                                    
+                                        </Box>                             
+                                    </Box>                         
                         </CardContent>
                     </Card>
                     </Container>

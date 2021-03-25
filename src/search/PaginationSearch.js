@@ -5,7 +5,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {selectSearch, setCurrentPage} from '../store/SearchSlice'
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
         paddingTop:"3rem",
     },

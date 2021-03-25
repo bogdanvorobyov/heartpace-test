@@ -21,7 +21,6 @@ const SelectYear = () => {
         }
         else{ 
             dispatch(setYears(`&year=${value}`))
-
         }
     };
 
@@ -29,7 +28,6 @@ const SelectYear = () => {
         setDisable(!event.target.checked)
         if(!event.target.checked){ 
             dispatch(setYears(''))
-            // props.setFilteringBy('discover/')
         }
     }
 
