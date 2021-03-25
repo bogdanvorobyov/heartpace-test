@@ -1,12 +1,15 @@
 import {createSlice} from '@reduxjs/toolkit'
 
+const persistedState = localStorage.getItem('reduxState') 
+                       ? JSON.parse(localStorage.getItem('reduxState'))
+                       : {
+                            films:[],
+                            checked: {}, 
+                        }
+
 export const FavoriteSlice = createSlice({
     name: 'favorite',
-    initialState: {
-        films:[],
-        checked: {}, 
-        color: 'classes.favoriteWhite', 
-     }, 
+    initialState: persistedState, 
     reducers : { 
         setFilms:(state,data)=>{
             state.films = [...state.films,data.payload]

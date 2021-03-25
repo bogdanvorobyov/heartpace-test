@@ -6,6 +6,9 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import SearchFilms from '../search/SearchFilms'
+import {useDispatch} from 'react-redux';
+import {setIsSearching, setPlaceHolder} from '../store/SearchSlice'
+
 
 
 
@@ -34,15 +37,19 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Header = () => {
-
+  const dispatch = useDispatch()
     const classes = useStyles();
+    const searchSwitcher =()=>{ 
+      dispatch(setIsSearching(false))
+      dispatch(setPlaceHolder(''))
+  }
 
     return (
         <div >
         <AppBar position="static">
           <Toolbar id='back-to-top-anchor' className={classes.toolbar}>
             <Typography variant="h6" className={classes.title}>
-              <Link className={classes.link} to='/'>Home</Link>
+              <Link className={classes.link} to='/' onClick={searchSwitcher}>Home</Link>
             </Typography>
             <SearchFilms/>
             <Button color="inherit" className={classes.title}>
