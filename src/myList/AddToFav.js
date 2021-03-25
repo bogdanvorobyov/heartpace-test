@@ -9,13 +9,13 @@ const useStyles = makeStyles((theme) => ({
     favoriteWhite:{ 
         position:"absolute",
         top:-50,
-        left: 280,
+        right: 20,
         color:"white",
     },
     favoriteRed:{ 
         position:"absolute",
         top:-50,
-        left: 280,
+        right: 20,
         color:"red",
     },
     cardIcon:{

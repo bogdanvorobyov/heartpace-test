@@ -14,7 +14,7 @@ function App() {
   
   const store = useSelector(selectSearch)
   const storeFav = useSelector(selectFav)
-  localStorage.setItem('reduxState', JSON.stringify(storeFav)) 
+  localStorage.setItem('reduxState1', JSON.stringify(storeFav)) 
 
 
 

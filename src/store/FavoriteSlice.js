@@ -1,10 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit'
 
-const persistedState = localStorage.getItem('reduxState') 
-                       ? JSON.parse(localStorage.getItem('reduxState'))
+const persistedState = localStorage.getItem('reduxState1') 
+                       ? JSON.parse(localStorage.getItem('reduxState1'))
                        : {
                             films:[],
-                            checked: {}, 
+                            checked: {1:false}, 
                         }
 
 export const FavoriteSlice = createSlice({
