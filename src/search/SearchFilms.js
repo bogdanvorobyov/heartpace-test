@@ -26,7 +26,7 @@ const SearchFilms = () => {
                 <Grid item >
                     <SearchIcon />
                 </Grid>
-                <Grid item justify="center" >
+                <Grid item>
                     <TextField  id="input-with-icon-grid" onChange={searchHandler}  size="medium" label="Search for films..." />
                 </Grid>
             </Grid>

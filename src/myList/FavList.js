@@ -4,7 +4,8 @@ import AddToFav from '../myList/AddToFav'
 import {Typography,Box, Grid, Card, CardContent, CardMedia, CircularProgress} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import {useSelector} from 'react-redux';
-import {selectSearch} from '../store/SearchSlice'
+import {selectFav} from '../store/FavoriteSlice'
+
 
 const useStyles = makeStyles((theme) => ({
     parent:{ 
@@ -47,15 +48,19 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const SearchList = () => {
+const FavList = () => {
 
-    const store = useSelector(selectSearch)
+    const store = useSelector(selectFav)
     const classes = useStyles();
+
+    const res = store.films.filter(item => {
+        return item!== undefined && item!== null
+     })
 
     return (
         <div>
             <Grid container spacing={2} className={classes.parent}>
-                {store.searchFilms.map(film => (
+                {res.map(film => (
                     <Grid item key={film.id} xs={12} sm={6} md={6} lg={4} xl={3}>
                         <Link to={`/film/${film.id}`}>
                             <Card className={classes.card}>
@@ -77,9 +82,9 @@ const SearchList = () => {
                         </Link>
                     </Grid>
                 ))}
-            </Grid>
+            </Grid>   
         </div>
     )
 }
 
-export default SearchList
+export default FavList

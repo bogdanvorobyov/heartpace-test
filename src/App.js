@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Header from './header/Header'
 import Main from './home/Main'
 import SearchPage from './search/SearchPage'
-import MyList from './myList/MyList'
+import Favorite from './myList/Favorite'
 import {useSelector} from 'react-redux';
 import {selectSearch} from './store/SearchSlice'
 import FilmCard from './FilmCard/FilmCard'
@@ -20,7 +20,7 @@ function App() {
           <Switch>
               {store.isSearching&&<Route exact path='/' component={SearchPage}></Route>}
               {!store.isSearching&&<Route exact path='/' component={Main}></Route>}
-              <Route path='/mylist' component={MyList}></Route>
+              <Route path='/mylist' component={Favorite}></Route>
               <Route path="/film/:id" children={<FilmCard/>} />
           </Switch>
       </Router>

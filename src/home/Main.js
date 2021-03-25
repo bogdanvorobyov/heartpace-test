@@ -81,7 +81,6 @@ const Main = (props) => {
             <Container maxWidth='lg' >
                 <Box className={classes.filters}>
                     <PaginationPopular />
-                    {/* <SearchFilms setSearch={setSearch} setFilteringBy={setFilteringBy} setGanres={setGanres} setYears={setYears} setSortering={setSortering}/> */}
                 </Box>
                 <MainList/>
                 <ScrollTop {...props}>

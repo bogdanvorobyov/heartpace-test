@@ -9,16 +9,6 @@ export const FilmSlice = createSlice({
         setFilm:(state,data)=>{
             state.film = data.payload
         },
-        // setVideo:(state,data)=>{
-        //     state.video = data.payload
-        // },
-        // setActors:(state,data)=>{
-        //     state.actors = data.payload
-        // },
-        // setRating:(state,data)=>{
-        //     state.searchFilms = data.payload
-        // },
-       
     }
 })
 

@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import {useSelector} from 'react-redux';
 import {selectSort} from '../store/SortSlice'
 import {Link} from "react-router-dom";
+import AddToFav from '../myList/AddToFav';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -65,10 +66,11 @@ const MainList = () => {
                                     className={classes.image}
                                     image={film.poster_path?`https://image.tmdb.org/t/p/w300/${film.poster_path}`:"https://www.diabetes.ie/wp-content/uploads/2017/02/no-image-available.png"}
                                 />
-                                <CardContent>
+                                <CardContent> 
                                     <Box className={classes.rating}>
-                                    <CircularProgress color="secondary" className={classes.circleProgress} variant="determinate" value={Number.parseInt(film.vote_average)*10} />
-                                    <Typography className={classes.voteRating}>{film.vote_average*10+'%'}</Typography>
+                                        <AddToFav film={film}/>
+                                        <CircularProgress color="secondary" className={classes.circleProgress} variant="determinate" value={Number.parseInt(film.vote_average)*10} />
+                                        <Typography className={classes.voteRating}>{film.vote_average*10+'%'}</Typography>
                                     </Box>
                                     <Typography style={{fontSize:"1rem",minHeight:"70px"}}><b>{film.title}</b></Typography>
                                     <Typography>{film.release_date?film.release_date:"unknown"}</Typography>
